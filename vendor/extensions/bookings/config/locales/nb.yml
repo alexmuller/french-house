@@ -1,0 +1,32 @@
+nb:
+  refinery:
+    plugins:
+      bookings:
+        title: Bookings
+    bookings:
+      admin:
+        bookings:
+          actions:
+            create_new: Lag en ny Booking
+            reorder: Endre rekkefølgen på Bookings
+            reorder_done: Ferdig å endre rekkefølgen Bookings
+          records:
+            title: Bookings
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Bookings enda. Klikk på "Lag en ny Booking" for å legge til din første booking.
+          booking:
+            view_live_html: Vis hvordan denne booking ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne booking
+            delete: Fjern denne booking permanent
+      bookings:
+        show:
+          other: Andre Bookings
+  activerecord:
+    attributes:
+      'refinery/bookings/booking':
+        start_date: Start Date
+        end_date: End Date
+        contact_name: Contact Name
+        contact_number: Contact Number
+        contact_email: Contact Email
+        confirmed: Confirmed

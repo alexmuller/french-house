@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130406185111) do
+ActiveRecord::Schema.define(:version => 20130407080636) do
+
+  create_table "refinery_bookings", :force => true do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "contact_name"
+    t.string   "contact_number"
+    t.string   "contact_email"
+    t.boolean  "confirmed"
+    t.integer  "position"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "refinery_images", :force => true do |t|
     t.string   "image_mime_type"

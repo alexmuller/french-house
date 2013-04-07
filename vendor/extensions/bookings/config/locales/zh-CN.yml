@@ -1,0 +1,34 @@
+zh-CN:
+  refinery:
+    plugins:
+      bookings:
+        title: Bookings
+    bookings:
+      admin:
+        bookings:
+          actions:
+            create_new: 建立新的 Booking
+            reorder: 对 Bookings 重新排序
+            reorder_done: 对 Bookings 的重新排序结束
+          records:
+            title: Bookings
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Bookings yet. Click "Add New Booking" to add your first booking.
+            no_items_yet: 目前没有 Bookings . 点击 "Add New Booking" 创建一个booking.
+          booking:
+            view_live_html: 查看 booking 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 booking
+            delete: 永久删除 booking
+      bookings:
+        show:
+          other: 其他 Bookings
+  activerecord:
+    attributes:
+      'refinery/bookings/booking':
+        start_date: Start Date
+        end_date: End Date
+        contact_name: Contact Name
+        contact_number: Contact Number
+        contact_email: Contact Email
+        confirmed: Confirmed

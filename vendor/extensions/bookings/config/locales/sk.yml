@@ -1,0 +1,32 @@
+sk:
+  refinery:
+    plugins:
+      bookings:
+        title: Bookings
+    bookings:
+      admin:
+        bookings:
+          actions:
+            create_new: Pridať Booking
+            reorder: Preusporiadať Bookings
+            reorder_done: Koniec radenia Bookings
+          records:
+            title: Bookings
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Bookings. Kliknite na "Pridať Booking" pre pridanie prvého booking.
+          booking:
+            view_live_html: Zobraziť náhľad booking<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť booking
+            delete: Zmazať booking
+      bookings:
+        show:
+          other: Daľšie Bookings
+  activerecord:
+    attributes:
+      'refinery/bookings/booking':
+        start_date: Start Date
+        end_date: End Date
+        contact_name: Contact Name
+        contact_number: Contact Number
+        contact_email: Contact Email
+        confirmed: Confirmed
