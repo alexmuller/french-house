@@ -1,0 +1,35 @@
+#bookings_table {
+  border-collapse: collapse;
+  td {
+    border: 1px solid black;
+    display: inline-block;
+    margin: 2px 0;
+    min-width: 80px;
+    padding: 8px 0;
+    text-align: center;
+    span {
+      display: block;
+      &.day, &.month {
+        font-size: 80%;
+      }
+      &.day {
+        color: #666;
+      }
+      &.date {
+        font-weight: bold;
+        padding: 4px 0;
+      }
+      &.month {
+        color: #999;
+      }
+    }
+    &.booked {
+      background: #8C585B;
+      background-image: repeating-linear-gradient(-45deg, transparent, transparent 12px, rgba(255,255,255,.2) 12px, rgba(255,255,255,.2) 24px);
+      opacity: 0.4;
+    }
+    &.past {
+      opacity: 0.1;
+    }
+  }
+}

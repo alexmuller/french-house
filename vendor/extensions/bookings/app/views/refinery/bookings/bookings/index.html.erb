@@ -1,11 +1,25 @@
 <% content_for :body do %>
-  <ul id="bookings">
-    <% @bookings.each do |booking| %>
-      <li>
-        <%= link_to booking.contact_name, refinery.bookings_booking_path(booking) %>
-      </li>
+  <table id="bookings_table">
+    <% @days.each_slice(7) do |week| %>
+      <tr>
+        <% week.each do |elem| %>
+          <td class="<%= "booked" if elem[:booked] %> <%= "past" if elem[:date].past? %>">
+            <time datetime="<%= elem[:date].strftime("%F") %>">
+              <span class="day">
+                <%= elem[:date].strftime("%A") %>
+              </span>
+              <span class="date">
+                <%= elem[:date].day.ordinalize %>
+              </span>
+              <span class="month">
+                <%= elem[:date].strftime("%B") %>
+              </span>
+            </time>
+          </td>
+        <% end %>
+      </tr>
     <% end %>
-  </ul>
+  </table>
 <% end %>
 
 <%= render '/refinery/content_page' %>
