@@ -25,9 +25,10 @@ namespace :deploy do
 
   desc "Symlink sensitive config files into the release."
   task :symlink_config do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
   end
 end
 
-after "deploy:update_code", "deploy:symlink_config"
+before "deploy:assets:precompile", "deploy:symlink_config"
+
 after "deploy:restart", "deploy:cleanup"
