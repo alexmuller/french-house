@@ -92,3 +92,6 @@ capybara-*html
 # vendor/extensions dummy applications.
 vendor/extensions/**/spec/dummy
 
+# Files with passwords in are handled by Capistrano
+# post-deployment
+/config/database.yml
