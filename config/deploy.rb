@@ -8,7 +8,7 @@ server "lighfe.mullr.net", :app, :web, :db, :primary => true
 
 set :user, "alexmuller"
 set :deploy_to, "/srv/#{application}"
-set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
+set :rvm_ruby_string, "1.9.3"
 
 ssh_options[:forward_agent] = true
 ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "id_rsa")]
