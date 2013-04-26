@@ -1,3 +1,5 @@
+require "rvm/capistrano"
+
 set :application, "french-house"
 set :repository,  "git://github.com/alexmuller/french-house.git"
 set :scm, :git
@@ -6,6 +8,7 @@ server "lighfe.mullr.net", :app, :web, :db, :primary => true
 
 set :user, "alexmuller"
 set :deploy_to, "/srv/#{application}"
+set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
 
 ssh_options[:forward_agent] = true
 ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "id_rsa")]
