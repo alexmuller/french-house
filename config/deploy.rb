@@ -14,22 +14,20 @@ set :rvm_ruby_string, "1.9.3"
 ssh_options[:forward_agent] = true
 ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "id_rsa")]
 
-# If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
   task :start do ; end
   task :stop do ; end
+
+  desc "Restart passenger by touching a file."
   task :restart, :roles => :app, :except => { :no_release => true } do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
-end
 
-namespace :config do
-  desc "symlink sensitive config files into the release"
-  task :symlink do
-    run "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  desc "Symlink sensitive config files into the release."
+  task :symlink_config do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
 end
 
+after "deploy:update_code", "deploy:symlink_config"
 after "deploy:restart", "deploy:cleanup"
-
-after "deploy", "config:symlink"
