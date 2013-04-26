@@ -1,3 +1,4 @@
+require "bundler/capistrano"
 require "rvm/capistrano"
 
 set :application, "french-house"
@@ -22,21 +23,12 @@ namespace :deploy do
   end
 end
 
-namespace :bundle do
-  desc "run bundle install and ensure all gem requirements are met"
-  task :install do
-    run "cd #{current_path} && bundle install  --without=test --no-update-sources"
-  end
-end
-
 namespace :config do
   desc "symlink sensitive config files into the release"
   task :symlink do
     run "ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
 end
-
-before "deploy:restart", "bundle:install"
 
 after "deploy:restart", "deploy:cleanup"
 
