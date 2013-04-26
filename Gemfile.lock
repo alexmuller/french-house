@@ -155,6 +155,8 @@ GEM
     refinerycms-i18n (2.0.2)
       refinerycms-core (~> 2.0.0)
       routing-filter (>= 0.2.3)
+    refinerycms-page-images (2.0.1)
+      refinerycms-pages (~> 2.0.0)
     routing-filter (0.3.1)
       actionpack
     sass (3.2.7)
@@ -194,6 +196,7 @@ DEPENDENCIES
   refinerycms (~> 2.0.0)!
   refinerycms-bookings!
   refinerycms-i18n (~> 2.0.0)
+  refinerycms-page-images (~> 2.0.0)
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
